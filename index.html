@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Video Recorder</title>
+    <meta name="description"
+        content="A video recording app that captures gyroscope and GPS data alongside your videos.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-blue': '#0f172a',
+                        'medium-blue': '#1e293b',
+                        'accent-blue': '#3b82f6',
+                        'bright-blue': '#60a5fa',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-dark-blue text-white">
+    <!-- Navigation Header -->
+    <nav class="fixed w-full top-0 z-50 bg-dark-blue/80 backdrop-blur-md border-b border-slate-700">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+
+                    <span class="text-xl font-bold">Sensor Recorder</span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-slate-300 hover:text-white transition-colors">Features</a>
+                    <a href="#download" class="text-slate-300 hover:text-white transition-colors">Download</a>
+                    <a href="https://github.com/sumit-s-nair/Video-Recorder" target="_blank"
+                        class="text-slate-300 hover:text-white transition-colors">GitHub</a>
+                </div>
+
+                <a href="/app-release.apk"
+                    class="bg-accent-blue hover:bg-blue-600 px-4 py-2 rounded-lg font-medium transition-colors">
+                    Download
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <!-- Hero Badge -->
+                <div
+                    class="inline-flex items-center px-4 py-2 mb-8 bg-accent-blue/10 border border-accent-blue/20 rounded-full">
+                    <span class="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></span>
+                    <span class="text-sm text-slate-300">Open Source • Free Download</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    <span
+                        class="bg-gradient-to-r from-white via-bright-blue to-accent-blue bg-clip-text text-transparent">
+                        Video Recording
+                    </span>
+                    <br>
+                    <span class="text-slate-300">with Sensor Data</span>
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+                    Capture professional videos while recording precise gyroscope and GPS data.
+                    Perfect for motion analysis, research, and advanced video projects.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+                    <a href="/app-release.apk"
+                        class="group relative overflow-hidden bg-gradient-to-r from-accent-blue to-bright-blue hover:from-blue-600 hover:to-blue-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                        <span class="relative z-10 flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                            </svg>
+                            <span>Download for Android</span>
+                        </span>
+                        <div
+                            class="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/sumit-s-nair/Video-Recorder" target="_blank"
+                        class="group bg-slate-800/50 hover:bg-slate-700/50 border border-slate-600 hover:border-slate-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm">
+                        <span class="flex items-center space-x-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                            </svg>
+                            <span>View Source Code</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 max-w-md mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-bright-blue">30 FPS</div>
+                        <div class="text-sm text-slate-400">Sensor Data</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-green-400">HD</div>
+                        <div class="text-sm text-slate-400">Video Quality</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-purple-400">GPS</div>
+                        <div class="text-sm text-slate-400">Precision</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6 bg-gradient-to-b from-dark-blue to-medium-blue">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Everything you need</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    A complete solution for recording videos with synchronized sensor data
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="group p-8 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-bright-blue/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-bright-blue to-accent-blue rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 2v-7l-4 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Video Recording</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        High-quality video recording with audio capture using your device's camera.
+                    </p>
+                </div>
+
+                <div
+                    class="group p-8 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-green-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2M12,4A5,5 0 0,1 17,9C17,13 12,18.71 12,18.71C12,18.71 7,13 7,9A5,5 0 0,1 12,4M12,7A2,2 0 0,0 10,9A2,2 0 0,0 12,11A2,2 0 0,0 14,9A2,2 0 0,0 12,7Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">GPS Tracking</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Real-time location tracking with coordinates, altitude, and movement data.
+                    </p>
+                </div>
+
+                <div
+                    class="group p-8 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Gyroscope Data</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Captures device rotation and movement across all three axes at 30 FPS.
+                    </p>
+                </div>
+
+                <div
+                    class="group p-8 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-orange-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Data Export</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Exports sensor data as JSON files alongside your video recordings.
+                    </p>
+                </div>
+
+                <div
+                    class="group p-8 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Video Preview</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Built-in player that shows sensor data synchronized with video playback.
+                    </p>
+                </div>
+
+                <div
+                    class="group p-8 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-pink-400/50 transition-all duration-300 hover:transform hover:scale-105">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-pink-400 to-rose-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">File Management</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Easy access to recordings through your device's file manager.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to get started?</h2>
+            <p class="text-slate-400 text-lg mb-12 max-w-2xl mx-auto">
+                Download the app now and start recording videos with precise sensor data capture.
+            </p>
+
+            <div
+                class="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-12">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-4">For Android Devices</h3>
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
+                                </svg>
+                                <span>Android 6.0 or higher</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
+                                </svg>
+                                <span>Camera and location permissions</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
+                                </svg>
+                                <span>Free and open source</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <a href="/app-release.apk"
+                            class="inline-block bg-gradient-to-r from-accent-blue to-bright-blue hover:from-blue-600 hover:to-blue-500 text-white font-bold text-lg py-4 px-8 rounded-xl transition-all duration-300 hover:transform hover:scale-105 shadow-xl">
+                            Download APK
+                        </a>
+                        <p class="text-sm text-slate-400 mt-4">
+                            Latest version • Updated regularly
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-slate-700">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div
+                        class="w-8 h-8 bg-gradient-to-br from-bright-blue to-accent-blue rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 2v-7l-4 2z" />
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold">Sensor Recorder</span>
+                </div>
+
+                <div class="text-slate-400 text-center">
+                    <p>
+                        Built with Flutter • Open Source •
+                        <a href="https://github.com/sumit-s-nair/Video-Recorder" target="_blank"
+                            class="text-bright-blue hover:text-accent-blue transition-colors">
+                            Contribute on GitHub
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
