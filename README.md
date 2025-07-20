@@ -1,6 +1,6 @@
 # Video Recorder with additional sensor data
 
-A Flutter app that records videos with synchronized gyroscope and GPS data. Its good for analyzing camera movement and location while recording 
+A Flutter app that records videos with synchronized gyroscope and GPS data. Its good for analyzing camera movement and location while recording (Basically created for my other project to allow it to make better path recommendations) check it out at [Terrain-Aware Path Recommendation](https://github.com/sumit-s-nair/Terrain-Aware-Path-Recommendation)
 
 ## What does it do?
 
